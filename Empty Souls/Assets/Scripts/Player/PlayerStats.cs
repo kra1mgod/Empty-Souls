@@ -43,6 +43,11 @@ using UnityEngine;
     public delegate void LumzvarChangedDelegate(int current, int max);
     public event LumzvarChangedDelegate OnLumzvarChanged;
 
+    [Header("Soul Fragments")] // Or keep under Lumzvar header if preferred
+    public int soulFragments = 0;
+    public event System.Action<int> OnSoulFragmentsChanged;
+
+
     private Dictionary<string, GameObject> weapons = new Dictionary<string, GameObject>();
     private bool isDead = false;
     private LumzvarBar lumzvarBar;
@@ -211,6 +216,14 @@ using UnityEngine;
             InitiateWeaponEvolutionChoice(); // New method call
         }
         UpdateLumzvarUI();
+    }
+
+    public void AddSoulFragments(int amount)
+    {
+        if (isDead) return;
+        soulFragments += amount;
+        OnSoulFragmentsChanged?.Invoke(soulFragments);
+        // Debug.Log($"Collected {amount} Soul Fragments. Total: {soulFragments}");
     }
 
     private void UpdateLumzvarUI()
