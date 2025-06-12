@@ -33,8 +33,19 @@ using UnityEngine;
     public delegate void OnHPChanged(int hp, int maxHP);
     public event OnHPChanged onHPChanged;
 
+    [Header("Lumzvar Evolution")]
+    public int currentLumzvarPoints = 0;
+    public int baseLumzvarRequired = 50;
+    public float lumzvarScalingFactor = 1.5f;
+    public int evolutionCount = 0;
+    public int lumzvarForNextEvolution;
+
+    public delegate void LumzvarChangedDelegate(int current, int max);
+    public event LumzvarChangedDelegate OnLumzvarChanged;
+
     private Dictionary<string, GameObject> weapons = new Dictionary<string, GameObject>();
     private bool isDead = false;
+    private LumzvarBar lumzvarBar;
 
     void Awake()
     {
@@ -170,6 +181,99 @@ using UnityEngine;
         if (deathPanel != null)
             deathPanel.SetActive(true);
     }
+
+    public int GetCurrentLumzvar()
+    {
+        return currentLumzvarPoints;
+    }
+
+    public int GetLumzvarForNextEvolution()
+    {
+        return lumzvarForNextEvolution;
+    }
+
+    private int CalculateLumzvarForNextEvolution()
+    {
+        return Mathf.FloorToInt(baseLumzvarRequired * Mathf.Pow(lumzvarScalingFactor, evolutionCount));
+    }
+
+    public void AddLumzvar(int amount)
+    {
+        if (isDead) return;
+        currentLumzvarPoints += amount;
+        if (currentLumzvarPoints >= lumzvarForNextEvolution)
+        {
+            currentLumzvarPoints -= lumzvarForNextEvolution; // Leftover points carry over
+            evolutionCount++;
+            int previousLumzvarRequired = lumzvarForNextEvolution; // Store for logging
+            lumzvarForNextEvolution = CalculateLumzvarForNextEvolution();
+            Debug.Log($"Evolution criteria met! Evolution count: {evolutionCount}. {currentLumzvarPoints} Lumzvar carried over. Next evolution needs {lumzvarForNextEvolution} Lumzvar (previously {previousLumzvarRequired}).");
+            InitiateWeaponEvolutionChoice(); // New method call
+        }
+        UpdateLumzvarUI();
+    }
+
+    private void UpdateLumzvarUI()
+    {
+        OnLumzvarChanged?.Invoke(currentLumzvarPoints, lumzvarForNextEvolution);
+        if (lumzvarBar != null)
+        {
+            lumzvarBar.UpdateBar(currentLumzvarPoints, lumzvarForNextEvolution);
+        }
+    }
+
+    private void InitiateWeaponEvolutionChoice()
+    {
+        Debug.Log("Player has earned a weapon evolution! Displaying evolution choices...");
+        // Placeholder: In a real implementation, this would open a UI screen.
+        // For now, let's simulate choosing to evolve the "Runes" weapon as an example.
+        // This choice would normally come from player input via the UI.
+
+        //string chosenWeaponToEvolve = "RunesWeapon"; // Example: player chooses Runes
+        //EvolveWeapon(chosenWeaponToEvolve);
+
+        // Actual evolution UI and choice mechanism will be implemented in a later step.
+        // For now, we just log that the point for choice has been reached.
+        // The LevelUpUI.Instance.ShowUpgradeChoices(); from the original LevelUp might be a good place to adapt later.
+        if (LevelUpUI.Instance != null)
+        {
+            // We can potentially reuse or adapt the LevelUpUI for weapon evolution choices.
+            // For this initial phase, we won't trigger it directly to avoid complexity,
+            // but it's a good candidate for future integration.
+            Debug.Log("Weapon Evolution: Consider adapting LevelUpUI or creating a new UI for weapon evolution choices.");
+        }
+        else
+        {
+            Debug.LogWarning("Weapon Evolution: LevelUpUI instance not found. Cannot suggest UI adaptation.");
+        }
+    }
+
+    // Placeholder for actual weapon evolution logic
+    /*
+    public void EvolveWeapon(string weaponName)
+    {
+        if (!weapons.ContainsKey(weaponName))
+        {
+            Debug.LogWarning($"Attempted to evolve weapon '{weaponName}', but it's not found on the player.");
+            return;
+        }
+
+        // TODO: Implement actual evolution effects for the chosen weapon.
+        // This might involve:
+        // 1. Accessing the weapon's script (e.g., RunesWeapon, KatanaWeapon, MaceWeapon).
+        // 2. Modifying its stats (damage, speed, area of effect, etc.).
+        // 3. Adding new abilities or characteristics.
+        // 4. Potentially changing its appearance or projectile.
+        // 5. Adding new related stats for the player to level up (e.g., "Puncture" for Runes).
+
+        Debug.Log($"Weapon '{weaponName}' has been marked for evolution. (Actual effects TBD).");
+
+        // Example of how a new stat could be introduced (conceptual)
+        // if (weaponName == "RunesWeapon" && !HasStat("Puncture")) {
+        //    AddStat(new PlayerStat("Puncture", AttributeType.Intelligence, 0.5f)); // 0.5f means it levels slower than main stat
+        // }
+    }
+    */
 }
 
 public enum AttributeType { Strength, Agility, Intelligence }
