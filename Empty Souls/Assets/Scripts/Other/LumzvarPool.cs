@@ -6,6 +6,14 @@ public class LumzvarPool : MonoBehaviour
     public float cooldownTime = 60f; // Time before this pool can be used again
     public bool singleUse = false; // If true, pool is destroyed after one use
 
+    [Header("Visuals")]
+    public SpriteRenderer poolSpriteRenderer; // Assign in Inspector: the main sprite of the pool
+    public Color activeColor = Color.white; // Color when pool is usable
+    public Color cooldownColor = Color.gray; // Color when pool is on cooldown
+    // Optional: For particle effects
+    // public ParticleSystem activeParticles;
+    // public ParticleSystem cooldownParticles; // Or just disable activeParticles
+
     private bool onCooldown = false;
     private float currentCooldown = 0f;
     private PlayerStats playerStats; // Cached reference
@@ -19,6 +27,14 @@ public class LumzvarPool : MonoBehaviour
         {
             Debug.LogError("LumzvarPool: PlayerStats not found in scene!");
         }
+        // Set initial color
+        if (poolSpriteRenderer != null)
+        {
+            poolSpriteRenderer.color = onCooldown ? cooldownColor : activeColor;
+        }
+        // Optional: Handle initial particle state
+        // if (activeParticles != null) activeParticles.gameObject.SetActive(!onCooldown);
+        // if (cooldownParticles != null) cooldownParticles.gameObject.SetActive(onCooldown);
     }
 
     void Update()
@@ -29,7 +45,14 @@ public class LumzvarPool : MonoBehaviour
             if (currentCooldown <= 0)
             {
                 onCooldown = false;
-                // Optionally, add some visual indication that the pool is active again
+                Debug.Log("Lumzvar Pool is active again.");
+                if (poolSpriteRenderer != null)
+                {
+                    poolSpriteRenderer.color = activeColor;
+                }
+                // Optional: Update particle effects
+                // if (activeParticles != null) activeParticles.gameObject.SetActive(true);
+                // if (cooldownParticles != null) cooldownParticles.gameObject.SetActive(false);
             }
         }
     }
@@ -43,10 +66,8 @@ public class LumzvarPool : MonoBehaviour
             PlayerStats targetStats = other.GetComponent<PlayerStats>();
             if (targetStats == playerStats) // Check if it's the correct player instance
             {
-                // This is a placeholder for the actual method call,
-                // as PlayerStats.AddLumzvar() doesn't exist yet.
-                // playerStats.AddLumzvar(lumzvarAmount);
-                Debug.Log($"Player collected {lumzvarAmount} Lumzvar. (PlayerStats.AddLumzvar method needs to be implemented)");
+                playerStats.AddLumzvar(lumzvarAmount);
+                Debug.Log($"Player collected {lumzvarAmount} Lumzvar.");
 
 
                 if (singleUse)
@@ -57,7 +78,14 @@ public class LumzvarPool : MonoBehaviour
                 {
                     onCooldown = true;
                     currentCooldown = cooldownTime;
-                    // Optionally, add some visual indication that the pool is on cooldown
+                    Debug.Log("Lumzvar Pool is now on cooldown.");
+                    if (poolSpriteRenderer != null)
+                    {
+                        poolSpriteRenderer.color = cooldownColor;
+                    }
+                    // Optional: Update particle effects
+                    // if (activeParticles != null) activeParticles.gameObject.SetActive(false);
+                    // if (cooldownParticles != null) cooldownParticles.gameObject.SetActive(true);
                 }
             }
         }

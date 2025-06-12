@@ -5,6 +5,7 @@ public class PlayerProgressionScreen : MonoBehaviour
 {
     public GameObject progressionPanel; // Assign the main panel GameObject in Inspector
     public Text soulFragmentsText;    // Assign a UI Text for soul fragments display
+    public BaseAbilitySO[] availableAbilitiesForLearning; // Assign these in the Inspector
 
     private PlayerStats playerStats;
 
@@ -31,6 +32,47 @@ public class PlayerProgressionScreen : MonoBehaviour
         else if (progressionPanel != null)
         {
             progressionPanel.SetActive(false); // Start with the panel hidden
+        }
+    }
+
+    // This method would be called by a UI button for a specific ability.
+    // The index could correspond to an ability in the availableAbilitiesForLearning array.
+    public void LearnAbilityClicked(int abilityIndex)
+    {
+        if (playerStats == null)
+        {
+            Debug.LogError("PlayerProgressionScreen: PlayerStats reference is missing!");
+            return;
+        }
+
+        if (availableAbilitiesForLearning == null || abilityIndex < 0 || abilityIndex >= availableAbilitiesForLearning.Length)
+        {
+            Debug.LogError($"PlayerProgressionScreen: Invalid abilityIndex {abilityIndex} or availableAbilitiesForLearning not set up.");
+            return;
+        }
+
+        BaseAbilitySO abilityToLearn = availableAbilitiesForLearning[abilityIndex];
+
+        if (abilityToLearn != null)
+        {
+            Debug.Log($"PlayerProgressionScreen: Attempting to learn ability '{abilityToLearn.abilityName}'.");
+            // TODO: Add currency check here if abilities cost Soul Fragments
+            // if (playerStats.soulFragments >= abilityToLearn.soulFragmentCost) // Assuming BaseAbilitySO has a cost
+            // {
+            //     playerStats.SpendSoulFragments(abilityToLearn.soulFragmentCost); // Method to be added in PlayerStats
+            //     playerStats.LearnAbility(abilityToLearn);
+            // }
+            // else
+            // {
+            //     Debug.Log($"Not enough Soul Fragments to learn '{abilityToLearn.abilityName}'.");
+            // }
+
+            // For now, learn without cost:
+            playerStats.LearnAbility(abilityToLearn);
+        }
+        else
+        {
+            Debug.LogWarning($"PlayerProgressionScreen: No ability assigned at index {abilityIndex} in availableAbilitiesForLearning.");
         }
     }
 
