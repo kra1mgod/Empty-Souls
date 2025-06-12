@@ -1,0 +1,135 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Empty Souls\\Empty Souls\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|E:\\Empty Souls\\Empty Souls\\assets\\scripts\\player\\statsui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\statsui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|e:\\empty souls\\empty souls\\assets\\scripts\\player\\characterui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\characterui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|e:\\empty souls\\empty souls\\assets\\scripts\\weapon\\katanawave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weapon\\katanawave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|E:\\Empty Souls\\Empty Souls\\assets\\scripts\\weapon\\macehity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weapon\\macehity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|E:\\Empty Souls\\Empty Souls\\assets\\scripts\\weapon\\katana.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weapon\\katana.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|E:\\Empty Souls\\Empty Souls\\assets\\scripts\\weapon\\projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weapon\\projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|E:\\Empty Souls\\Empty Souls\\assets\\scripts\\other\\destroyafterseconds.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\other\\destroyafterseconds.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CharacterUI.cs",
+              "DocumentMoniker": "E:\\Empty Souls\\Empty Souls\\Assets\\Scripts\\Player\\CharacterUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\CharacterUI.cs",
+              "ToolTip": "E:\\Empty Souls\\Empty Souls\\Assets\\Scripts\\Player\\CharacterUI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\CharacterUI.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAkwCUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-05T14:27:24.096Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StatsUI.cs",
+              "DocumentMoniker": "E:\\Empty Souls\\Empty Souls\\Assets\\Scripts\\Player\\StatsUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\StatsUI.cs",
+              "ToolTip": "E:\\Empty Souls\\Empty Souls\\Assets\\Scripts\\Player\\StatsUI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\StatsUI.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAcwDcAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T17:34:13.832Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "KatanaWave.cs",
+              "DocumentMoniker": "E:\\Empty Souls\\Empty Souls\\Assets\\Scripts\\Weapon\\KatanaWave.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Weapon\\KatanaWave.cs",
+              "ToolTip": "E:\\Empty Souls\\Empty Souls\\Assets\\Scripts\\Weapon\\KatanaWave.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Weapon\\KatanaWave.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T17:39:39.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MaceHity.cs",
+              "DocumentMoniker": "E:\\Empty Souls\\Empty Souls\\Assets\\Scripts\\Weapon\\MaceHity.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Weapon\\MaceHity.cs",
+              "ToolTip": "E:\\Empty Souls\\Empty Souls\\Assets\\Scripts\\Weapon\\MaceHity.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Weapon\\MaceHity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T17:39:44.942Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Katana.cs",
+              "DocumentMoniker": "E:\\Empty Souls\\Empty Souls\\Assets\\Scripts\\Weapon\\Katana.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Weapon\\Katana.cs",
+              "ToolTip": "E:\\Empty Souls\\Empty Souls\\Assets\\Scripts\\Weapon\\Katana.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Weapon\\Katana.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T17:39:31.703Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Projectile.cs",
+              "DocumentMoniker": "E:\\Empty Souls\\Empty Souls\\Assets\\Scripts\\Weapon\\Projectile.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Weapon\\Projectile.cs",
+              "ToolTip": "E:\\Empty Souls\\Empty Souls\\Assets\\Scripts\\Weapon\\Projectile.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Weapon\\Projectile.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T17:31:22.871Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DestroyAfterSeconds.cs",
+              "DocumentMoniker": "E:\\Empty Souls\\Empty Souls\\Assets\\Scripts\\Other\\DestroyAfterSeconds.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Other\\DestroyAfterSeconds.cs",
+              "ToolTip": "E:\\Empty Souls\\Empty Souls\\Assets\\Scripts\\Other\\DestroyAfterSeconds.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Other\\DestroyAfterSeconds.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T17:28:31.869Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
