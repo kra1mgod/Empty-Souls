@@ -27,6 +27,7 @@ public class KatanaWeapon : MonoBehaviour, IAutoAttackWeapon
         if (wave != null)
         {
             wave.SetDirection(dir);
+            wave.playerStats = this.playerStats; // Ensure PlayerStats is passed to the wave
         }
     }
 }

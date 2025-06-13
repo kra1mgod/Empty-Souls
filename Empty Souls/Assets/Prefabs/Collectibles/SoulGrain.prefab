@@ -1,0 +1,13 @@
+// This is a placeholder for the SoulGrain.prefab.
+// It should be configured in the Unity Editor as follows:
+// 1. Create a new prefab named SoulGrain.
+// 2. Add a SpriteRenderer component (assign a suitable sprite for a soul grain).
+// 3. Add a 2D Collider component (e.g., CircleCollider2D or BoxCollider2D).
+//    - Ensure 'Is Trigger' is checked on the collider.
+// 4. Attach the 'SoulGrain.cs' script to this prefab.
+// 5. (Optional) Assign a sound to the 'Collection Sound' field in the SoulGrain script component.
+// 6. (Optional) Add an AudioSource component if sounds are to be played directly by this object
+//    and no AudioManager is used.
+// 7. Consider adding a Rigidbody2D component set to 'Kinematic' or 'Static' if needed for certain trigger interactions,
+//    though for simple trigger collectibles, it might not be strictly necessary if the player has a Rigidbody2D.
+//    If it has its own Rigidbody2D and should not be affected by physics, set Body Type to Kinematic.
