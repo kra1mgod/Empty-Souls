@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6882693764660713374}
   - component: {fileID: 4382831883643437926}
   - component: {fileID: 55311045756944315}
-  - component: {fileID: 5302355681183327169}
   - component: {fileID: 386318618541383435}
   - component: {fileID: 8914358784216429641}
   - component: {fileID: 2014631703459185582}
@@ -166,22 +165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7071dcae1239b34aab2ed6cb62afa40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerStats: {fileID: 0}
   speed: 5
---- !u!114 &5302355681183327169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8720548698692083380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ba5274e9d18a554e949b00dbcd15fd7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 164991979605399358, guid: 702d9b99223cb3140929603ebe610815, type: 3}
-  rate: 1
-  projectileSpeed: 15
 --- !u!95 &386318618541383435
 Animator:
   serializedVersion: 5
@@ -244,11 +229,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 039dd3b049f83b64c8369986bf5d3e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  strength:
+    type: 0
+    level: 1
+    exp: 0
+    expToLevel: 2
+  agility:
+    type: 1
+    level: 1
+    exp: 0
+    expToLevel: 2
+  intelligence:
+    type: 2
+    level: 1
+    exp: 0
+    expToLevel: 2
   maxHP: 100
   currentHP: 0
-  level: 1
+  damage: 10
+  damageBonusPercent: 0
+  moveSpeed: 5
   experience: 0
   expToNextLevel: 100
+  level: 1
   animatedHPBar: {fileID: 0}
   deathPanel: {fileID: 0}
-  invulnTime: 1
+  autoWeaponManager: {fileID: 0}
+  currentLumzvarPoints: 0
+  baseLumzvarRequired: 50
+  lumzvarScalingFactor: 1.5
+  evolutionCount: 0
+  lumzvarForNextEvolution: 0
+  soulFragments: 0
+  learnedAbilities: []
+  activeAbility: {fileID: 0}

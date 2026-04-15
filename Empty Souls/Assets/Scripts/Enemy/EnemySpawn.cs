@@ -1,30 +1,35 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject enemyPrefab;
-    public float interval = 2f;
     public float spawnRadius = 10f;
-    private float timer;
+    private Transform player;
 
-    void Update()
+    public void SpawnEnemies(List<EnemySpawnInfo> enemySpawns)
     {
-        if (enemyPrefab == null)
+        if (player == null)
         {
-            Debug.LogError("EnemySpawner: enemyPrefab not assigned!");
-            return;
-        }
-
-        timer += Time.deltaTime;
-        if (timer >= interval)
-        {
-            timer = 0;
-            Vector2 playerPos = Vector2.zero;
             var playerObj = GameObject.FindGameObjectWithTag("Player");
-            if (playerObj != null) playerPos = playerObj.transform.position;
+            if (playerObj) player = playerObj.transform;
+        }
+        StartCoroutine(SpawnRoutine(enemySpawns));
+    }
 
-            Vector2 spawnPos = playerPos + Random.insideUnitCircle.normalized * spawnRadius;
-            Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
+    private IEnumerator SpawnRoutine(List<EnemySpawnInfo> enemySpawns)
+    {
+        foreach (var info in enemySpawns)
+        {
+            for (int i = 0; i < info.count; i++)
+            {
+                Vector2 spawnPos = (player != null)
+                    ? (Vector2)player.position + Random.insideUnitCircle.normalized * spawnRadius
+                    : (Vector2)transform.position + Random.insideUnitCircle.normalized * spawnRadius;
+                Instantiate(info.enemyPrefab, spawnPos, Quaternion.identity);
+                if (info.delay > 0f && i < info.count - 1)
+                    yield return new WaitForSeconds(info.delay);
+            }
         }
     }
 }

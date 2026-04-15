@@ -7,6 +7,7 @@ public class LevelUpUI : MonoBehaviour
     public GameObject panel;
     public Button[] choiceButtons;
     public Text[] choiceTexts;
+    public GameObject lumzvarBar;
 
     List<UpgradeOption> currentOptions;
 
@@ -25,28 +26,26 @@ public class LevelUpUI : MonoBehaviour
     }
     public void ShowUpgradeChoices()
     {
+        if (lumzvarBar != null)
+            lumzvarBar.SetActive(false); // Скрыть при выборе оружия
         panel.SetActive(true);
-        Debug.Log("ShowUpgradeChoices called!");
-        Debug.Log("UpgradeSystem.Instance: " + UpgradeSystem.Instance);
-        if (UpgradeSystem.Instance != null)
-            Debug.Log("allUpgrades.Count: " + UpgradeSystem.Instance.allUpgrades.Count);
+        int toShow = Mathf.Min(choiceButtons.Length, UpgradeSystem.Instance.allUpgrades.Count);
+        currentOptions = UpgradeSystem.Instance.GetRandomOptions(toShow);
 
-        currentOptions = UpgradeSystem.Instance.GetRandomOptions(3);
-        Debug.Log("currentOptions.Count: " + currentOptions.Count);
-
-        for (int i = 0; i < 3; i++)
+        // Скрыть все кнопки перед показом
+        for (int i = 0; i < choiceButtons.Length; i++)
         {
-            Debug.Log($"choiceTexts[{i}] = {choiceTexts[i]}");
-            Debug.Log($"choiceButtons[{i}] = {choiceButtons[i]}");
-            Debug.Log($"currentOptions[{i}] = {currentOptions[i]}");
-            if (currentOptions[i] != null)
-                Debug.Log($"currentOptions[{i}].description = {currentOptions[i].description}");
+            choiceButtons[i].gameObject.SetActive(i < toShow);
+        }
 
-            choiceTexts[i].text = currentOptions[i].description; // тут может быть null
+        for (int i = 0; i < toShow; i++)
+        {
+            choiceTexts[i].text = currentOptions[i].description;
             int idx = i;
             choiceButtons[i].onClick.RemoveAllListeners();
             choiceButtons[i].onClick.AddListener(() => OnChoose(idx));
         }
+
         Time.timeScale = 0f;
     }
 
@@ -55,5 +54,7 @@ public class LevelUpUI : MonoBehaviour
         UpgradeSystem.Instance.ApplyUpgrade(currentOptions[idx]);
         panel.SetActive(false);
         Time.timeScale = 1f;
+        if (lumzvarBar != null)
+            lumzvarBar.SetActive(true); // Показать обратно после выбора
     }
 }

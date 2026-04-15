@@ -1,14 +1,15 @@
-using System.Runtime.InteropServices;
 using UnityEngine;
-
 
 public class KatanaWave : MonoBehaviour
 {
     public PlayerStats playerStats;
-    public AttributeType mainAttribute = AttributeType.Agility; // Для катаны
+    public AttributeType mainAttribute = AttributeType.Agility;
     public float speed = 10f;
     public float lifetime = 1f;
-    public int damage = 20;
+    [SerializeField] public int damage = 20;
+
+    // --- COLOR EVOLUTION PATCH ---
+    [HideInInspector] public Color waveColor = Color.white;
 
     private Vector2 moveDirection = Vector2.right;
 
@@ -21,6 +22,12 @@ public class KatanaWave : MonoBehaviour
 
     void Start()
     {
+        var sr = GetComponent<SpriteRenderer>();
+        if (sr != null)
+        {
+            // --- COLOR EVOLUTION PATCH ---
+            sr.color = waveColor;
+        }
         Destroy(gameObject, lifetime);
     }
 
@@ -34,10 +41,22 @@ public class KatanaWave : MonoBehaviour
         var enemy = other.GetComponent<EnemyHealth>();
         if (enemy != null)
         {
-            enemy.TakeDamage(damage);
             if (playerStats != null)
-                playerStats.AddWeaponExp(mainAttribute, 1);
+            {
+                int dmg = Mathf.RoundToInt(playerStats.GetTotalDamage(damage, mainAttribute));
+                enemy.TakeDamage(dmg);
+            }
+            else
+                enemy.TakeDamage(damage);
+            playerStats?.AddWeaponExp(mainAttribute, 1);
             Destroy(gameObject);
+        }
+        var boss = other.GetComponent<BossAI>();
+        if (boss != null)
+        {
+            boss.TakeDamage(damage);
+            Destroy(gameObject);
+            return;
         }
     }
 }

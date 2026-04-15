@@ -1,6 +1,0 @@
-// This is a placeholder for the RunesWeapon.prefab.
-// It should be configured in Unity with the RunesWeapon.cs script.
-// The RunesWeapon.cs script should be configured with:
-// - runeProjectilePrefab: reference to RuneProjectile.prefab (formerly Projectile.prefab)
-// - playerStats: reference to the Player's PlayerStats component
-// - mainAttribute: Intelligence

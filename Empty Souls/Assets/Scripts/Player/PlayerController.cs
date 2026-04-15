@@ -14,6 +14,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if (playerStats != null)
+                playerStats.UseActiveAbility();
+        }
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
         float h = Input.GetAxisRaw("Horizontal");
@@ -27,6 +32,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position + moveInput.normalized * speed * Time.fixedDeltaTime);
+        float actualSpeed = playerStats != null ? playerStats.moveSpeed : speed;
+        rb.MovePosition(rb.position + moveInput.normalized * actualSpeed * Time.fixedDeltaTime);
     }
 }

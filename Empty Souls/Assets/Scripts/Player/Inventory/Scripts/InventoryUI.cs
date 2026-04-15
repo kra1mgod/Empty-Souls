@@ -74,11 +74,12 @@ public class InventoryUI : MonoBehaviour
 
     private void RefreshUI()
     {
+        Debug.Log("Обновляем UI, предметов в списке: " + items.Count);
         for (int i = 0; i < passiveItemSlots.Length; i++)
         {
             var slot = passiveItemSlots[i];
-            var icon = slot.Find("Icon")?.GetComponent<Image>();
-            var nameText = slot.Find("Name")?.GetComponent<TextMeshProUGUI>();
+            var icon = slot.Find("Canvas/Icon")?.GetComponent<Image>();
+            var nameText = slot.Find("Canvas/Name")?.GetComponent<TextMeshProUGUI>();
 
             if (i < items.Count)
             {

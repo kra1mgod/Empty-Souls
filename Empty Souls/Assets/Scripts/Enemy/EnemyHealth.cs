@@ -51,7 +51,8 @@ public class EnemyHealth : MonoBehaviour
         {
             Debug.LogWarning("SoulGrainPrefab not assigned in EnemyHealth on " + gameObject.name);
         }
-
+        if (UserStatsManager.Instance != null)
+            UserStatsManager.Instance.AddKill();
         Destroy(gameObject);
     }
 }

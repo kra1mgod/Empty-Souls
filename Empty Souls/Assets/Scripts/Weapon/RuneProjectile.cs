@@ -5,17 +5,34 @@ public class RuneProjectile : MonoBehaviour
     public int damage = 1;
     public float lifetime = 2f;
     public float explosionRadius = 1.5f;
+    public float baseSpeed = 10f;
     public LayerMask enemyLayer;
     public GameObject explosionEffect;
 
     public PlayerStats playerStats;
     public AttributeType mainAttribute = AttributeType.Intelligence;
 
-    void Start()
+    private Vector2 moveDir;
+
+    public void SetDirection(Vector2 dir)
     {
-        Destroy(gameObject, lifetime);
+        moveDir = dir.normalized;
     }
 
+    void Start()
+    {
+        // Применяем бонус ловкости к скорости
+        float speed = baseSpeed;
+        if (playerStats != null)
+            speed *= playerStats.GetAgilityProjectileSpeedBonus();
+        GetComponent<Rigidbody2D>().velocity = moveDir * speed;
+
+        // Бонус к урону
+        if (playerStats != null)
+            damage += Mathf.RoundToInt(playerStats.GetAgilityWeaponDamageBonus(mainAttribute));
+
+        Destroy(gameObject, lifetime);
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Enemy"))
@@ -37,9 +54,11 @@ public class RuneProjectile : MonoBehaviour
                 var health = hit.GetComponent<EnemyHealth>();
                 if (health != null)
                 {
-                    health.TakeDamage(damage);
                     if (playerStats != null)
-                        playerStats.AddWeaponExp(mainAttribute, 1);
+                        health.TakeDamage(Mathf.RoundToInt(playerStats.GetTotalDamage(damage, mainAttribute)));
+                    else
+                        health.TakeDamage(damage);
+                    playerStats?.AddWeaponExp(mainAttribute, 1);
                 }
             }
         }

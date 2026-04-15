@@ -121,7 +121,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.52, y: 0.64}
+  m_Size: {x: 0.52, y: 1}
   m_Direction: 0
 --- !u!50 &-5994925697557536479
 Rigidbody2D:
@@ -162,9 +162,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f2021b0c938d684e85e221c8dc38804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerStats: {fileID: 0}
+  mainAttribute: 1
   speed: 10
   lifetime: 1
   damage: 20
+  evolveLevel: 0
 --- !u!95 &7919880594683567289
 Animator:
   serializedVersion: 5

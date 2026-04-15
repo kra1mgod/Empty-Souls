@@ -1,4 +1,4 @@
-using UnityEngine;
+п»їusing UnityEngine;
 using System.Collections.Generic;
 
 public class UpgradeSystem : MonoBehaviour
@@ -41,19 +41,39 @@ public class UpgradeSystem : MonoBehaviour
         {
             case UpgradeType.MaxHP:
                 player.maxHP += Mathf.RoundToInt(option.value);
-                player.currentHP += Mathf.RoundToInt(option.value); // чтобы сразу восстановить хп при увеличении максимума
+                player.currentHP += Mathf.RoundToInt(option.value);
                 player.animatedHPBar.SetHP(player.currentHP, player.maxHP);
                 break;
             case UpgradeType.Damage:
-                player.damage += option.value;
+                player.AddBonusDamage(option.value);
                 break;
             case UpgradeType.MoveSpeed:
                 player.moveSpeed += option.value;
                 break;
-            case UpgradeType.NewWeapon:
-                player.AddWeapon(option.name); // реализуй метод AddWeapon в PlayerStats или отдельном скрипте
+            case UpgradeType.SizeUp:
+                player.transform.localScale += new Vector3(option.value, option.value, 0);
                 break;
-                // добавь другие типы по необходимости
+            case UpgradeType.SizeDown:
+                player.transform.localScale -= new Vector3(option.value, option.value, 0);
+                break;
+            case UpgradeType.AttackSpeed:
+                // РџСЂРёРјРµСЂ: СѓСЃРєРѕСЂРёС‚СЊ РІСЃРµ Р°РІС‚Рѕ-РѕСЂСѓР¶РёСЏ
+                var weapons = player.GetComponentsInChildren<IAutoAttackWeapon>();
+                foreach (var weapon in weapons)
+                {
+                    var runesWeapon = weapon as RunesWeapon;
+                    if (runesWeapon != null)
+                        runesWeapon.fireInterval *= (1 - option.value); // value = 0.1f в†’ СѓСЃРєРѕСЂРµРЅРёРµ РЅР° 10%
+                    var katanaWeapon = weapon as KatanaWeapon;
+                    if (katanaWeapon != null)
+                        katanaWeapon.fireInterval *= (1 - option.value);
+                    // РђРЅР°Р»РѕРіРёС‡РЅРѕ РґР»СЏ РґСЂСѓРіРёС… РѕСЂСѓР¶РёР№
+                }
+                break;
+            case UpgradeType.NewWeapon:
+                player.AddWeapon(option.name);
+                break;
+                // РјРѕР¶РЅРѕ РґРѕР±Р°РІРёС‚СЊ Рё РґСЂСѓРіРёРµ С‚РёРїС‹
         }
     }
 }

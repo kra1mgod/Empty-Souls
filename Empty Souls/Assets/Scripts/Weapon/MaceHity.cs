@@ -15,9 +15,11 @@ public class MaceHity : MonoBehaviour
         var enemy = other.GetComponent<EnemyHealth>();
         if (enemy != null)
         {
-            enemy.TakeDamage(damageAmount);
             if (playerStats != null)
-                playerStats.AddWeaponExp(mainAttribute, 1);
+                enemy.TakeDamage(Mathf.RoundToInt(playerStats.GetTotalDamage(damageAmount, mainAttribute)));
+            else
+                enemy.TakeDamage(damageAmount);
+            playerStats?.AddWeaponExp(mainAttribute, 1);
         }
     }
 }

@@ -1,7 +1,8 @@
 using UnityEngine;
 
-public class MaceWeapon : MonoBehaviour
+public class MaceWeapon : MonoBehaviour, IEvolvableWeapon
 {
+    public bool isEvolved { get; private set; }
     public GameObject macePrefab;
     public float radius = 2f;
     public float rotateSpeed = 180f;
@@ -88,4 +89,16 @@ public class MaceWeapon : MonoBehaviour
             line.SetPosition(1, maceInstance.transform.position);
         }
     }
+    public void Evolve()
+    {
+        if (!isEvolved)
+        {
+            isEvolved = true;
+            radius *= 1.3f;
+            rotateSpeed *= 1.2f;
+            Debug.Log("MaceWeapon evolved! Increased radius and speed.");
+        }
+    }
+
+    public bool IsEvolved => isEvolved;
 }

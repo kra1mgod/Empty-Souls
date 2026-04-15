@@ -4,5 +4,8 @@ public enum UpgradeType
     Damage,
     MoveSpeed,
     NewWeapon,
-    // и любые другие типы
+    SizeUp,
+    SizeDown,
+    AttackSpeed,
+    // любые другие типы
 }

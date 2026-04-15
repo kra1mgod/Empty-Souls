@@ -1,34 +1,130 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\Empty Souls\\Empty Souls\\",
+  "WorkspaceRootPath": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|E:\\Empty Souls\\Empty Souls\\assets\\scripts\\player\\statsui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\statsui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\assets\\scripts\\map\\mapcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\map\\mapcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|e:\\empty souls\\empty souls\\assets\\scripts\\player\\characterui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\characterui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\assets\\scripts\\player\\playerstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playerstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|e:\\empty souls\\empty souls\\assets\\scripts\\weapon\\katanawave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weapon\\katanawave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\assets\\scripts\\saves\\savemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\saves\\savemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|E:\\Empty Souls\\Empty Souls\\assets\\scripts\\weapon\\macehity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weapon\\macehity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\assets\\scripts\\ui\\mainmenumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\mainmenumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|E:\\Empty Souls\\Empty Souls\\assets\\scripts\\weapon\\katana.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\assets\\scripts\\ui\\lumzvarbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\lumzvarbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\assets\\scripts\\other\\lumzvarpool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\other\\lumzvarpool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\assets\\scripts\\weapon\\baseevolutionso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weapon\\baseevolutionso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\assets\\scripts\\ui\\evolutionpanelui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\evolutionpanelui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\assets\\scripts\\weapon\\evolutionlock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weapon\\evolutionlock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|d:\\empty souls\\empty souls (5)\\empty souls\\assets\\scripts\\weapon\\katana.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weapon\\katana.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|E:\\Empty Souls\\Empty Souls\\assets\\scripts\\weapon\\projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weapon\\projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|d:\\empty souls\\empty souls (5)\\empty souls\\assets\\scripts\\saves\\playersavedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\saves\\playersavedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|E:\\Empty Souls\\Empty Souls\\assets\\scripts\\other\\destroyafterseconds.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\other\\destroyafterseconds.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\assets\\scripts\\other\\evolutionmaganer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\other\\evolutionmaganer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|d:\\empty souls\\empty souls (5)\\empty souls\\assets\\scripts\\weapon\\ievoltionoption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weapon\\ievoltionoption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\assets\\scripts\\weapon\\powerwave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weapon\\powerwave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\assets\\scripts\\weapon\\evolutionoptiondb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weapon\\evolutionoptiondb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\assets\\scripts\\weapon\\weaponevolutionso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weapon\\weaponevolutionso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\assets\\scripts\\levelsmanagment\\levelwavemanagment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\levelsmanagment\\levelwavemanagment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\assets\\scripts\\player\\inventory\\scripts\\inventorysystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\inventory\\scripts\\inventorysystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\assets\\scripts\\player\\upgradesystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\upgradesystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\assets\\scripts\\other\\userstatsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\other\\userstatsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\assets\\scripts\\other\\lumzvarpoolspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\other\\lumzvarpoolspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\assets\\scripts\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\assets\\scripts\\player\\inventory\\scripts\\chestspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\inventory\\scripts\\chestspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\assets\\scripts\\ui\\bosshpbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\bosshpbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\assets\\scripts\\enemy\\bossai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemy\\bossai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\assets\\scripts\\ui\\gameendpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\gameendpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\assets\\scripts\\enemy\\enemyhealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemy\\enemyhealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Empty Souls\\Empty-Souls v0.4\\Empty Souls\\Assets\\Scripts\\Player\\Inventory\\InventorySystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Empty Souls\\Empty Souls\\Assets\\Scripts\\Weapon\\Projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Empty Souls\\Empty-Souls v0.4\\Empty Souls\\Assets\\Scripts\\Player\\Inventory\\ItemData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Empty Souls\\Empty-Souls v0.4\\Empty Souls\\Assets\\Scripts\\Player\\InventoryUI.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Weapon\\WeaponEvolutionOption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D78719F-4018-7EC9-ED2E-8C984206900F}|Assembly-CSharp.csproj|solutionrelative:Assets\\Scripts\\Weapon\\WeaponEvolutionOption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,94 +134,397 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LumzvarBar.cs",
+              "DocumentMoniker": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\UI\\LumzvarBar.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\LumzvarBar.cs",
+              "ToolTip": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\UI\\LumzvarBar.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\LumzvarBar.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAwwCoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T17:55:27.134Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CharacterUI.cs",
-              "DocumentMoniker": "E:\\Empty Souls\\Empty Souls\\Assets\\Scripts\\Player\\CharacterUI.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\CharacterUI.cs",
-              "ToolTip": "E:\\Empty Souls\\Empty Souls\\Assets\\Scripts\\Player\\CharacterUI.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player\\CharacterUI.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAkwCUAAAABAAAAAAAAAA==",
+              "Title": "PlayerStats.cs",
+              "DocumentMoniker": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Player\\PlayerStats.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerStats.cs",
+              "ToolTip": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Player\\PlayerStats.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerStats.cs",
+              "ViewState": "AgIAADECAAAAAAAAAAAwwEkCAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T14:27:24.096Z",
+              "WhenOpened": "2025-06-26T17:45:11.995Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "StatsUI.cs",
-              "DocumentMoniker": "E:\\Empty Souls\\Empty Souls\\Assets\\Scripts\\Player\\StatsUI.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\StatsUI.cs",
-              "ToolTip": "E:\\Empty Souls\\Empty Souls\\Assets\\Scripts\\Player\\StatsUI.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player\\StatsUI.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAcwDcAAAAkAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "LumzvarPool.cs",
+              "DocumentMoniker": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Other\\LumzvarPool.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Other\\LumzvarPool.cs",
+              "ToolTip": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Other\\LumzvarPool.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Other\\LumzvarPool.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAswGQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T17:34:13.832Z",
+              "WhenOpened": "2025-06-26T18:29:27.109Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "KatanaWave.cs",
-              "DocumentMoniker": "E:\\Empty Souls\\Empty Souls\\Assets\\Scripts\\Weapon\\KatanaWave.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Weapon\\KatanaWave.cs",
-              "ToolTip": "E:\\Empty Souls\\Empty Souls\\Assets\\Scripts\\Weapon\\KatanaWave.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Weapon\\KatanaWave.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "EvolutionPanelUI.cs",
+              "DocumentMoniker": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\UI\\EvolutionPanelUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\EvolutionPanelUI.cs",
+              "ToolTip": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\UI\\EvolutionPanelUI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\EvolutionPanelUI.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAtwE0AAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T17:39:39.929Z",
+              "WhenOpened": "2025-06-27T10:40:18.605Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "MaceHity.cs",
-              "DocumentMoniker": "E:\\Empty Souls\\Empty Souls\\Assets\\Scripts\\Weapon\\MaceHity.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Weapon\\MaceHity.cs",
-              "ToolTip": "E:\\Empty Souls\\Empty Souls\\Assets\\Scripts\\Weapon\\MaceHity.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Weapon\\MaceHity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "MainMenuManager.cs",
+              "DocumentMoniker": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\UI\\MainMenuManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\MainMenuManager.cs",
+              "ToolTip": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\UI\\MainMenuManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\MainMenuManager.cs",
+              "ViewState": "AgIAAI8BAAAAAAAAAAAowKMBAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T17:39:44.942Z"
+              "WhenOpened": "2025-06-26T18:11:44.52Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
+              "Title": "BaseEvolutionSO.cs",
+              "DocumentMoniker": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Weapon\\BaseEvolutionSO.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Weapon\\BaseEvolutionSO.cs",
+              "ToolTip": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Weapon\\BaseEvolutionSO.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Weapon\\BaseEvolutionSO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T10:40:07.214Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SaveManager.cs",
+              "DocumentMoniker": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Saves\\SaveManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Saves\\SaveManager.cs",
+              "ToolTip": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Saves\\SaveManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Saves\\SaveManager.cs",
+              "ViewState": "AgIAAIgAAAAAAAAAAAAowKEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T20:31:55.633Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MapController.cs",
+              "DocumentMoniker": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Map\\MapController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Map\\MapController.cs",
+              "ToolTip": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Map\\MapController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Map\\MapController.cs",
+              "ViewState": "AgIAAJcAAAAAAAAAAAAowKkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T20:36:02.669Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "EvolutionLock.cs",
+              "DocumentMoniker": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Weapon\\EvolutionLock.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Weapon\\EvolutionLock.cs",
+              "ToolTip": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Weapon\\EvolutionLock.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Weapon\\EvolutionLock.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T10:39:50.038Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Katana.cs",
-              "DocumentMoniker": "E:\\Empty Souls\\Empty Souls\\Assets\\Scripts\\Weapon\\Katana.cs",
+              "DocumentMoniker": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Weapon\\Katana.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Weapon\\Katana.cs",
-              "ToolTip": "E:\\Empty Souls\\Empty Souls\\Assets\\Scripts\\Weapon\\Katana.cs",
+              "ToolTip": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Weapon\\Katana.cs",
               "RelativeToolTip": "Assets\\Scripts\\Weapon\\Katana.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T17:39:31.703Z"
+              "WhenOpened": "2025-06-27T10:57:38.43Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
+              "Title": "PlayerSaveData.cs",
+              "DocumentMoniker": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Saves\\PlayerSaveData.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Saves\\PlayerSaveData.cs",
+              "ToolTip": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Saves\\PlayerSaveData.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Saves\\PlayerSaveData.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAkwE8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T10:56:31.184Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "EvolutionOptionDB.cs",
+              "DocumentMoniker": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Weapon\\EvolutionOptionDB.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Weapon\\EvolutionOptionDB.cs",
+              "ToolTip": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Weapon\\EvolutionOptionDB.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Weapon\\EvolutionOptionDB.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T10:39:55.502Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "EvolutionMaganer.cs",
+              "DocumentMoniker": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Other\\EvolutionMaganer.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Other\\EvolutionMaganer.cs",
+              "ToolTip": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Other\\EvolutionMaganer.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Other\\EvolutionMaganer.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAswDQAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T19:36:44.424Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "WeaponEvolutionSO.cs",
+              "DocumentMoniker": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Weapon\\WeaponEvolutionSO.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Weapon\\WeaponEvolutionSO.cs",
+              "ToolTip": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Weapon\\WeaponEvolutionSO.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Weapon\\WeaponEvolutionSO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T10:40:13.072Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "PowerWAve.cs",
+              "DocumentMoniker": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Weapon\\PowerWAve.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Weapon\\PowerWAve.cs",
+              "ToolTip": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Weapon\\PowerWAve.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Weapon\\PowerWAve.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAMAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T10:43:16.157Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IEvoltionOption.cs",
+              "DocumentMoniker": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Weapon\\IEvoltionOption.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Weapon\\IEvoltionOption.cs",
+              "ToolTip": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Weapon\\IEvoltionOption.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Weapon\\IEvoltionOption.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T10:43:44.436Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "UserStatsManager.cs",
+              "DocumentMoniker": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Other\\UserStatsManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Other\\UserStatsManager.cs",
+              "ToolTip": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Other\\UserStatsManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Other\\UserStatsManager.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAkwFcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T18:57:25.714Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "LumzvarPoolSpawner.cs",
+              "DocumentMoniker": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Other\\LumzvarPoolSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Other\\LumzvarPoolSpawner.cs",
+              "ToolTip": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Other\\LumzvarPoolSpawner.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Other\\LumzvarPoolSpawner.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T18:49:24.799Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "PlayerController.cs",
+              "DocumentMoniker": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Player\\PlayerController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerController.cs",
+              "ToolTip": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Player\\PlayerController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T18:28:07.926Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ChestSpawner.cs",
+              "DocumentMoniker": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Player\\Inventory\\Scripts\\ChestSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Inventory\\Scripts\\ChestSpawner.cs",
+              "ToolTip": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Player\\Inventory\\Scripts\\ChestSpawner.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\Inventory\\Scripts\\ChestSpawner.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T18:27:03.699Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "UpgradeSystem.cs",
+              "DocumentMoniker": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Player\\UpgradeSystem.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\UpgradeSystem.cs",
+              "ToolTip": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Player\\UpgradeSystem.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\UpgradeSystem.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAiwE4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T20:45:52.756Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "InventorySystem.cs",
+              "DocumentMoniker": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Player\\Inventory\\Scripts\\InventorySystem.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Inventory\\Scripts\\InventorySystem.cs",
+              "ToolTip": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Player\\Inventory\\Scripts\\InventorySystem.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\Inventory\\Scripts\\InventorySystem.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAUwEYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T20:52:37.925Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "LevelWaveManagment.cs",
+              "DocumentMoniker": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\LevelsManagment\\LevelWaveManagment.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\LevelsManagment\\LevelWaveManagment.cs",
+              "ToolTip": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\LevelsManagment\\LevelWaveManagment.cs",
+              "RelativeToolTip": "Assets\\Scripts\\LevelsManagment\\LevelWaveManagment.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAUwHwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T20:55:55.393Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "BossHPBAR.cs",
+              "DocumentMoniker": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\UI\\BossHPBAR.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\BossHPBAR.cs",
+              "ToolTip": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\UI\\BossHPBAR.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\BossHPBAR.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T17:54:44.104Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "EnemyHealth.cs",
+              "DocumentMoniker": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Enemy\\EnemyHealth.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy\\EnemyHealth.cs",
+              "ToolTip": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Enemy\\EnemyHealth.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Enemy\\EnemyHealth.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAiwDMAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T17:44:58.962Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "BossAI.cs",
+              "DocumentMoniker": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Enemy\\BossAI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy\\BossAI.cs",
+              "ToolTip": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Enemy\\BossAI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Enemy\\BossAI.cs",
+              "ViewState": "AgIAAOsAAAAAAAAAAAAiwAkBAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T17:44:44.243Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "GameEndPanel.cs",
+              "DocumentMoniker": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\UI\\GameEndPanel.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\GameEndPanel.cs",
+              "ToolTip": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\UI\\GameEndPanel.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\GameEndPanel.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAswDEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T17:34:03.369Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "WeaponEvolutionOption.cs",
+              "DocumentMoniker": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Weapon\\WeaponEvolutionOption.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Weapon\\WeaponEvolutionOption.cs",
+              "ToolTip": "D:\\Empty Souls\\Empty Souls (5)\\Empty Souls\\Assets\\Scripts\\Weapon\\WeaponEvolutionOption.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Weapon\\WeaponEvolutionOption.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T16:49:01.109Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
               "Title": "Projectile.cs",
               "DocumentMoniker": "E:\\Empty Souls\\Empty Souls\\Assets\\Scripts\\Weapon\\Projectile.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Weapon\\Projectile.cs",
               "ToolTip": "E:\\Empty Souls\\Empty Souls\\Assets\\Scripts\\Weapon\\Projectile.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Weapon\\Projectile.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-29T17:31:22.871Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DestroyAfterSeconds.cs",
-              "DocumentMoniker": "E:\\Empty Souls\\Empty Souls\\Assets\\Scripts\\Other\\DestroyAfterSeconds.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Other\\DestroyAfterSeconds.cs",
-              "ToolTip": "E:\\Empty Souls\\Empty Souls\\Assets\\Scripts\\Other\\DestroyAfterSeconds.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Other\\DestroyAfterSeconds.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "DocumentIndex": 29,
+              "Title": "ItemData.cs",
+              "DocumentMoniker": "D:\\Empty Souls\\Empty-Souls v0.4\\Empty Souls\\Assets\\Scripts\\Player\\Inventory\\ItemData.cs",
+              "RelativeDocumentMoniker": "..\\..\\Empty-Souls v0.4\\Empty Souls\\Assets\\Scripts\\Player\\Inventory\\ItemData.cs",
+              "ToolTip": "D:\\Empty Souls\\Empty-Souls v0.4\\Empty Souls\\Assets\\Scripts\\Player\\Inventory\\ItemData.cs",
+              "RelativeToolTip": "..\\..\\Empty-Souls v0.4\\Empty Souls\\Assets\\Scripts\\Player\\Inventory\\ItemData.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T17:28:31.869Z"
+              "WhenOpened": "2025-06-17T07:18:56.973Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "InventoryUI.cs",
+              "DocumentMoniker": "D:\\Empty Souls\\Empty-Souls v0.4\\Empty Souls\\Assets\\Scripts\\Player\\InventoryUI.cs",
+              "RelativeDocumentMoniker": "..\\..\\Empty-Souls v0.4\\Empty Souls\\Assets\\Scripts\\Player\\InventoryUI.cs",
+              "ToolTip": "D:\\Empty Souls\\Empty-Souls v0.4\\Empty Souls\\Assets\\Scripts\\Player\\InventoryUI.cs",
+              "RelativeToolTip": "..\\..\\Empty-Souls v0.4\\Empty Souls\\Assets\\Scripts\\Player\\InventoryUI.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-16T17:13:08.911Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "InventorySystem.cs",
+              "DocumentMoniker": "D:\\Empty Souls\\Empty-Souls v0.4\\Empty Souls\\Assets\\Scripts\\Player\\Inventory\\InventorySystem.cs",
+              "RelativeDocumentMoniker": "..\\..\\Empty-Souls v0.4\\Empty Souls\\Assets\\Scripts\\Player\\Inventory\\InventorySystem.cs",
+              "ToolTip": "D:\\Empty Souls\\Empty-Souls v0.4\\Empty Souls\\Assets\\Scripts\\Player\\Inventory\\InventorySystem.cs",
+              "RelativeToolTip": "..\\..\\Empty-Souls v0.4\\Empty Souls\\Assets\\Scripts\\Player\\Inventory\\InventorySystem.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T07:18:42.191Z"
             }
           ]
         }

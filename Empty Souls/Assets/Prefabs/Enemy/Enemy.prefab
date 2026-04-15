@@ -99,7 +99,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 18
   m_Sprite: {fileID: -115473948, guid: 4fd9d4fde608aed4199843af6abdeb63, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -138,6 +138,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 3
+  soulGrainPrefab: {fileID: 490236060219234333, guid: 88fb9a4757f8fa44ebfa156f74a67c67, type: 3}
+  soulGrainsToDrop: 1
 --- !u!50 &1105120345130048425
 Rigidbody2D:
   serializedVersion: 4

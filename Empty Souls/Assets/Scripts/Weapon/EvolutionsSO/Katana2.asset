@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Katana2
+  m_EditorClassIdentifier: Assembly-CSharp::KatanaTripleWaveSO
+  title: Triple Wave
+  description: "\u041A\u0430\u0442\u0430\u043D\u0430 \u0432\u044B\u043F\u0443\u0441\u043A\u0430\u0435\u0442
+    \u0442\u0440\u0438 \u0432\u043E\u043B\u043D\u044B \u0441\u0440\u0430\u0437\u0443."
+  icon: {fileID: 1773200371, guid: d5a0c41af732fce469ccaa83ae3edaa3, type: 3}

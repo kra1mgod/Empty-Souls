@@ -1,23 +1,23 @@
+п»їusing System;
 using System.Collections.Generic;
 using UnityEngine;
 
-    public class PlayerStats : MonoBehaviour
+public class PlayerStats : MonoBehaviour
 {
-
     public AttributeStat strength = new AttributeStat { type = AttributeType.Strength };
     public AttributeStat agility = new AttributeStat { type = AttributeType.Agility };
     public AttributeStat intelligence = new AttributeStat { type = AttributeType.Intelligence };
-
 
     [Header("HP")]
     public int maxHP = 100;
     public int currentHP = 100;
 
-    [Header("Damage")]
-    public float damage = 10f;
+    [Header("РЈСЂРѕРЅ")]
+    public float baseDamage = 10f;
+    public float damageBonusPercent = 0f;
 
     [Header("Speed")]
-    public float moveSpeed = 5f;
+    public float moveSpeed = 20f;
 
     [Header("Experience")]
     public int experience = 0;
@@ -43,7 +43,7 @@ using UnityEngine;
     public delegate void LumzvarChangedDelegate(int current, int max);
     public event LumzvarChangedDelegate OnLumzvarChanged;
 
-    [Header("Soul Fragments")] // Or keep under Lumzvar header if preferred
+    [Header("Soul Fragments")]
     public int soulFragments = 0;
     public event System.Action<int> OnSoulFragmentsChanged;
 
@@ -51,46 +51,50 @@ using UnityEngine;
     public List<BaseAbilitySO> learnedAbilities = new List<BaseAbilitySO>();
     public BaseAbilitySO activeAbility;
 
-
     private Dictionary<string, GameObject> weapons = new Dictionary<string, GameObject>();
     private bool isDead = false;
-    private LumzvarBar lumzvarBar;
+
+    public Vector2 lastMoveDirection { get; private set; } = Vector2.right;
+
+    [Header("User Settings")]
+    public float musicVolume = 1f;
+    public float sfxVolume = 1f;
+    public float ambientVolume = 1f;
+    public bool autoSaveEnabled = true;
+    public string difficultyLevel = "Normal";
+
+    private float playTimeTimer = 0f;
+
+    public DeathPanelUI deathPanelUI;
+    public GameEndPanel gameEndPanel;
+
+    public event Action OnPlayerDeath;
+    private float abilityCooldownTimer = 0f;
 
     void Awake()
     {
         foreach (Transform child in transform)
         {
             if (child.GetComponent<IAutoAttackWeapon>() != null)
+            {
                 weapons[child.name] = child.gameObject;
+            }
             else if (child.GetComponent<MaceWeapon>() != null)
+            {
                 weapons[child.name] = child.gameObject;
+            }
             child.gameObject.SetActive(false);
+            if (child.GetComponent<ChestSpawner>() != null)
+                child.gameObject.SetActive(true);
         }
         if (!autoWeaponManager)
             autoWeaponManager = GetComponent<AutoWeaponManager>();
+
+        lumzvarForNextEvolution = CalculateLumzvarForNextEvolution();
+        ApplyProfileFromSaveManager();
     }
-        public void AddWeaponExp(AttributeType main, int amount)
-        {
-            switch (main)
-            {
-                case AttributeType.Strength:
-                    strength.AddExp(amount * 3);
-                    agility.AddExp(amount);
-                    intelligence.AddExp(amount);
-                    break;
-                case AttributeType.Agility:
-                    strength.AddExp(amount);
-                    agility.AddExp(amount * 3);
-                    intelligence.AddExp(amount);
-                    break;
-                case AttributeType.Intelligence:
-                    strength.AddExp(amount);
-                    agility.AddExp(amount);
-                    intelligence.AddExp(amount * 3);
-                    break;
-            }
-        }
-        void Start()
+
+    void Start()
     {
         currentHP = maxHP;
         if (animatedHPBar != null)
@@ -98,15 +102,151 @@ using UnityEngine;
         onHPChanged?.Invoke(currentHP, maxHP);
         if (deathPanel != null)
             deathPanel.SetActive(false);
-    }
-    public Vector2 lastMoveDirection { get; private set; } = Vector2.right; // по умолчанию вправо
+        if (gameEndPanel != null && gameEndPanel.panelRoot != null)
+            gameEndPanel.panelRoot.SetActive(false);
 
-    public void SetMoveDirection(Vector2 dir)
-    {
-        if (dir.sqrMagnitude > 0.01f)
+        ApplyProfileFromSaveManager();
+        lumzvarForNextEvolution = CalculateLumzvarForNextEvolution();
+        UpdateLumzvarUI();
+        Debug.Log($"[PlayerStats] UpdateLumzvarUI РІС‹Р·РІР°РЅ: {currentLumzvarPoints} / {lumzvarForNextEvolution}");
+        if (GameData.selectedFragment != null)
         {
-            lastMoveDirection = dir.normalized;
+            LearnAbility(GameData.selectedFragment);
+            EquipAbility(GameData.selectedFragment);
         }
+    }
+
+    void Update()
+    {
+        var profile = SaveManager.Instance?.ActiveProfile;
+        if (profile != null && !isDead)
+        {
+            playTimeTimer += Time.unscaledDeltaTime;
+            if (playTimeTimer >= 1f)
+            {
+                int secondsToAdd = Mathf.FloorToInt(playTimeTimer);
+                profile.gameStatistics.totalPlayTimeSec += secondsToAdd;
+                playTimeTimer -= secondsToAdd;
+                SaveProfile();
+            }
+        }
+        if (abilityCooldownTimer > 0f)
+            abilityCooldownTimer -= Time.unscaledDeltaTime;
+    }
+
+    public void ApplyProfileFromSaveManager()
+    {
+        var profile = SaveManager.Instance?.ActiveProfile;
+        if (profile == null) return;
+
+        level = profile.gameStatistics.bestLevel;
+        evolutionCount = profile.gameStatistics.evolutionCount;
+        soulFragments = profile.resources.totalSoulFragments;
+
+        if (profile.progression != null)
+        {
+            foreach (var weapon in weapons)
+                weapon.Value.SetActive(false);
+            foreach (var w in profile.progression.weaponProgress.Keys)
+            {
+                if (weapons.ContainsKey(w))
+                    weapons[w].SetActive(true);
+            }
+
+            learnedAbilities.Clear();
+            foreach (var abName in profile.progression.unlockedAbilities)
+            {
+                var ab = AbilityDatabase.GetAbilityByName(abName);
+                if (ab != null) learnedAbilities.Add(ab);
+            }
+
+            if (!string.IsNullOrEmpty(profile.currentSelection.selectedFragment))
+                activeAbility = AbilityDatabase.GetAbilityByName(profile.currentSelection.selectedFragment);
+            else
+                activeAbility = null;
+        }
+
+        if (profile.userSettings != null)
+        {
+            musicVolume = profile.userSettings.audioSettings.musicVolume;
+            sfxVolume = profile.userSettings.audioSettings.sfxVolume;
+            ambientVolume = profile.userSettings.audioSettings.ambientVolume;
+            autoSaveEnabled = profile.userSettings.gameplaySettings.autoSaveEnabled;
+            difficultyLevel = profile.userSettings.gameplaySettings.difficultyLevel;
+        }
+    }
+
+    public void ExtractToProfile()
+    {
+        var profile = SaveManager.Instance?.ActiveProfile;
+        if (profile == null) return;
+
+        profile.gameStatistics.bestLevel = Mathf.Max(profile.gameStatistics.bestLevel, level);
+        profile.gameStatistics.evolutionCount = evolutionCount;
+        profile.resources.totalSoulFragments = soulFragments;
+
+        if (profile.progression != null)
+        {
+            profile.progression.unlockedAbilities = new List<string>();
+            foreach (var ab in learnedAbilities)
+                if (ab != null)
+                    profile.progression.unlockedAbilities.Add(ab.abilityName);
+
+            profile.currentSelection.selectedFragment = activeAbility != null ? activeAbility.abilityName : "";
+
+            profile.progression.weaponProgress = new Dictionary<string, WeaponProgress>();
+            foreach (var kv in weapons)
+            {
+                if (kv.Value.activeSelf)
+                {
+                    profile.progression.weaponProgress[kv.Key] = new WeaponProgress
+                    {
+                        level = 1,
+                        evolved = false,
+                        experiencePoints = 0
+                    };
+                }
+            }
+        }
+
+        if (profile.userSettings == null)
+            profile.userSettings = new UserSettings();
+        profile.userSettings.audioSettings.musicVolume = musicVolume;
+        profile.userSettings.audioSettings.sfxVolume = sfxVolume;
+        profile.userSettings.audioSettings.ambientVolume = ambientVolume;
+        profile.userSettings.gameplaySettings.autoSaveEnabled = autoSaveEnabled;
+        profile.userSettings.gameplaySettings.difficultyLevel = difficultyLevel;
+    }
+
+    public void AddWeaponExp(AttributeType main, int amount)
+    {
+        switch (main)
+        {
+            case AttributeType.Strength:
+                strength.AddExp(amount * 3);
+                agility.AddExp(amount);
+                intelligence.AddExp(amount);
+                break;
+            case AttributeType.Agility:
+                strength.AddExp(amount);
+                agility.AddExp(amount * 3);
+                intelligence.AddExp(amount);
+                break;
+            case AttributeType.Intelligence:
+                strength.AddExp(amount);
+                agility.AddExp(amount);
+                intelligence.AddExp(amount * 3);
+                break;
+        }
+        SaveProfile();
+    }
+
+    public void AddBonusHP(int value)
+    {
+        maxHP += value;
+        currentHP += value;
+        animatedHPBar?.SetHP(currentHP, maxHP);
+        SaveProfile();
     }
 
     public void LearnAbility(BaseAbilitySO ability)
@@ -115,57 +255,29 @@ using UnityEngine;
         if (!learnedAbilities.Contains(ability))
         {
             learnedAbilities.Add(ability);
-            Debug.Log($"Learned ability: {ability.abilityName}");
-            // Optionally, auto-equip if it's the first one or an active type
             if (activeAbility == null && ability.type == AbilityType.Active)
             {
                 EquipAbility(ability);
             }
-            // Apply passive effects immediately upon learning
             if (ability.type == AbilityType.Passive)
             {
                 ability.ApplyPassiveEffects(gameObject);
             }
+            SaveProfile();
         }
     }
 
     public void EquipAbility(BaseAbilitySO ability)
     {
         if (ability == null || !learnedAbilities.Contains(ability))
-        {
-            Debug.LogWarning($"Cannot equip ability: {(ability != null ? ability.abilityName : "null")}. Not learned or invalid.");
             return;
-        }
-
         if (ability.type == AbilityType.Active)
         {
             activeAbility = ability;
-            Debug.Log($"Equipped active ability: {ability.abilityName}");
-        }
-        else
-        {
-            Debug.LogWarning($"Cannot equip ability: {ability.abilityName}. It is not an Active type ability.");
+            SaveProfile();
         }
     }
 
-    public void UseActiveAbility()
-    {
-        if (activeAbility != null)
-        {
-            // TODO: Add cooldown check here if BaseAbilitySO tracks last use time
-            Debug.Log($"Attempting to use active ability: {activeAbility.abilityName}");
-            activeAbility.Activate(gameObject);
-        }
-        else
-        {
-            Debug.Log("No active ability equipped.");
-        }
-    }
-
-    public Vector2 GetMoveDirection()
-    {
-        return lastMoveDirection;
-    }
     public void AddWeapon(string weaponName)
     {
         if (weapons.ContainsKey(weaponName))
@@ -181,11 +293,7 @@ using UnityEngine;
             {
                 weapon.SetActive(true);
             }
-            Debug.Log("Оружие выдано: " + weaponName);
-        }
-        else
-        {
-            Debug.LogWarning("Оружие с именем " + weaponName + " не найдено!");
+            SaveProfile();
         }
     }
 
@@ -194,8 +302,31 @@ using UnityEngine;
         AddWeapon(weaponName);
     }
 
-    public float GetDamage() => damage;
-    public void SetMoveSpeed(float newSpeed) => moveSpeed = newSpeed;
+    public float GetTotalDamage(float baseWeaponDamage, AttributeType mainAttribute)
+    {
+        float statBonus = 0f;
+        switch (mainAttribute)
+        {
+            case AttributeType.Strength:
+                statBonus = strength.level * 0.5f;
+                break;
+            case AttributeType.Agility:
+                statBonus = agility.level * 0.5f;
+                break;
+            case AttributeType.Intelligence:
+                statBonus = intelligence.level * 0.5f;
+                break;
+        }
+        float total = baseWeaponDamage + baseDamage + statBonus;
+        return total * (1f + damageBonusPercent);
+    }
+
+    public float GetPlayerBaseDamage() => baseDamage;
+    public void AddBonusDamage(float value) { baseDamage += value; SaveProfile(); }
+    public void AddDamagePercent(float percent) { damageBonusPercent += percent; SaveProfile(); }
+
+    public float GetDamage() => GetPlayerBaseDamage();
+    public void SetMoveSpeed(float newSpeed) { moveSpeed = newSpeed; SaveProfile(); }
 
     public void TakeDamage(int amount)
     {
@@ -206,6 +337,7 @@ using UnityEngine;
         if (animatedHPBar != null)
             animatedHPBar.SetHP(currentHP, maxHP);
         if (currentHP <= 0) Die();
+        SaveProfile();
     }
 
     public void Heal(int amount)
@@ -215,44 +347,55 @@ using UnityEngine;
         onHPChanged?.Invoke(currentHP, maxHP);
         if (animatedHPBar != null)
             animatedHPBar.SetHP(currentHP, maxHP);
+        SaveProfile();
     }
 
     public void AddExperience(int amount)
     {
         if (isDead) return;
         experience += amount;
+
         while (experience >= expToNextLevel)
         {
             experience -= expToNextLevel;
             LevelUp();
         }
+        SaveProfile();
     }
 
     void LevelUp()
     {
         level++;
-        LevelUpUI.Instance.ShowUpgradeChoices();
+        LevelUpUI.Instance?.ShowUpgradeChoices();
+        SaveProfile();
     }
 
     void Die()
     {
         if (isDead) return;
         isDead = true;
-        Debug.Log("Игрок погиб!");
-        Time.timeScale = 0f;
-        if (deathPanel != null)
+
+        if (gameEndPanel != null)
+        {
+            gameEndPanel.ShowDefeat();
+        }
+        else if (deathPanel != null)
+        {
+            Time.timeScale = 0f;
             deathPanel.SetActive(true);
+        }
+
+        var profile = SaveManager.Instance?.ActiveProfile;
+        if (profile != null)
+            profile.gameStatistics.totalDeaths++;
+
+        OnPlayerDeath?.Invoke();
+
+        SaveProfile();
     }
 
-    public int GetCurrentLumzvar()
-    {
-        return currentLumzvarPoints;
-    }
-
-    public int GetLumzvarForNextEvolution()
-    {
-        return lumzvarForNextEvolution;
-    }
+    public int GetCurrentLumzvar() => currentLumzvarPoints;
+    public int GetLumzvarForNextEvolution() => lumzvarForNextEvolution;
 
     private int CalculateLumzvarForNextEvolution()
     {
@@ -262,105 +405,145 @@ using UnityEngine;
     public void AddLumzvar(int amount)
     {
         if (isDead) return;
+
+        var profile = SaveManager.Instance?.ActiveProfile;
+        if (profile != null)
+            profile.resources.totalLumzvar += amount;
+
         currentLumzvarPoints += amount;
-        if (currentLumzvarPoints >= lumzvarForNextEvolution)
+        Debug.Log($"[AddLumzvar] Now: {currentLumzvarPoints} / {lumzvarForNextEvolution}");
+
+        bool evolved = false;
+        while (currentLumzvarPoints >= lumzvarForNextEvolution)
         {
-            currentLumzvarPoints -= lumzvarForNextEvolution; // Leftover points carry over
+            currentLumzvarPoints -= lumzvarForNextEvolution;
             evolutionCount++;
-            int previousLumzvarRequired = lumzvarForNextEvolution; // Store for logging
             lumzvarForNextEvolution = CalculateLumzvarForNextEvolution();
-            Debug.Log($"Evolution criteria met! Evolution count: {evolutionCount}. {currentLumzvarPoints} Lumzvar carried over. Next evolution needs {lumzvarForNextEvolution} Lumzvar (previously {previousLumzvarRequired}).");
-            InitiateWeaponEvolutionChoice(); // New method call
+            evolved = true;
         }
         UpdateLumzvarUI();
+        if (evolved)
+        {
+            MonoBehaviour chosenWeapon = null;
+            foreach (var weaponObj in weapons.Values)
+            {
+                if (weaponObj.activeInHierarchy)
+                {
+                    chosenWeapon = weaponObj.GetComponent<MonoBehaviour>();
+                    if (chosenWeapon != null) break;
+                }
+            }
+            if (chosenWeapon == null && weapons.Count > 0)
+            {
+                foreach (var weaponObj in weapons.Values)
+                {
+                    chosenWeapon = weaponObj.GetComponent<MonoBehaviour>();
+                    if (chosenWeapon != null) break;
+                }
+            }
+
+            if (EvolutionManager.Instance != null && chosenWeapon != null)
+            {
+                EvolutionManager.Instance.ShowEvolutionOptions(chosenWeapon);
+            }
+        }
+        SaveProfile();
     }
 
     public void AddSoulFragments(int amount)
     {
         if (isDead) return;
         soulFragments += amount;
+
+        var profile = SaveManager.Instance?.ActiveProfile;
+        if (profile != null)
+            profile.resources.totalSoulFragments = soulFragments;
+
         OnSoulFragmentsChanged?.Invoke(soulFragments);
-        // Debug.Log($"Collected {amount} Soul Fragments. Total: {soulFragments}");
+        SaveProfile();
     }
 
     private void UpdateLumzvarUI()
     {
+        Debug.Log($"[PlayerStats] UpdateLumzvarUI: РїРѕРґРїРёСЃС‡РёРєРѕРІ {OnLumzvarChanged?.GetInvocationList().Length ?? 0}");
         OnLumzvarChanged?.Invoke(currentLumzvarPoints, lumzvarForNextEvolution);
-        if (lumzvarBar != null)
+    }
+
+    public float GetAgilityProjectileSpeedBonus()
+    {
+        return 1f + agility.level * 0.02f;
+    }
+    public float GetAgilityWeaponDamageBonus(AttributeType weaponType)
+    {
+        if (weaponType == AttributeType.Agility)
+            return agility.level * 0.5f;
+        return 0f;
+    }
+
+    public float GetStrengthWeaponDamageBonus(AttributeType weaponType)
+    {
+        if (weaponType == AttributeType.Strength)
+            return strength.level * 0.5f;
+        return 0f;
+    }
+
+    public float GetStrengthTouchDamageBonus()
+    {
+        return strength.level * 2f;
+    }
+
+    public float GetIntelligenceAbilityCooldownMultiplier()
+    {
+        return Mathf.Max(0.2f, 1f - intelligence.level * 0.01f);
+    }
+
+    public Vector2 GetMoveDirection()
+    {
+        return lastMoveDirection;
+    }
+
+    public void SetMoveDirection(Vector2 dir)
+    {
+        if (dir.sqrMagnitude > 0.01f)
         {
-            lumzvarBar.UpdateBar(currentLumzvarPoints, lumzvarForNextEvolution);
+            lastMoveDirection = dir.normalized;
         }
     }
 
-    private void InitiateWeaponEvolutionChoice()
+    public void UseActiveAbility()
     {
-        Debug.Log("Player has earned a weapon evolution! Displaying evolution choices...");
-        // Placeholder: In a real implementation, this would open a UI screen.
-        // For now, let's simulate choosing to evolve the "Runes" weapon as an example.
-        // This choice would normally come from player input via the UI.
-
-        string chosenWeaponToEvolve = "RunesWeapon"; // Example: player chooses Runes
-        EvolveWeapon(chosenWeaponToEvolve);
-
-        // Actual evolution UI and choice mechanism will be implemented in a later step.
-        // For now, we just log that the point for choice has been reached.
-        // The LevelUpUI.Instance.ShowUpgradeChoices(); from the original LevelUp might be a good place to adapt later.
-        if (LevelUpUI.Instance != null)
+        if (activeAbility != null)
         {
-            // We can potentially reuse or adapt the LevelUpUI for weapon evolution choices.
-            // For this initial phase, we won't trigger it directly to avoid complexity,
-            // but it's a good candidate for future integration.
-            Debug.Log("Weapon Evolution: Consider adapting LevelUpUI or creating a new UI for weapon evolution choices.");
-        }
-        else
-        {
-            Debug.LogWarning("Weapon Evolution: LevelUpUI instance not found. Cannot suggest UI adaptation.");
-        }
-    }
+            float abilityBaseCooldown = activeAbility.cooldown;
+            float cooldownMultiplier = GetIntelligenceAbilityCooldownMultiplier();
+            float finalCooldown = abilityBaseCooldown * cooldownMultiplier;
 
-    // Placeholder for actual weapon evolution logic
-    public void EvolveWeapon(string weaponName)
-    {
-        if (weapons.TryGetValue(weaponName, out GameObject weaponInstance))
-        {
-            // Attempt to get the RunesWeapon component
-            var runesWeapon = weaponInstance.GetComponent<RunesWeapon>();
-            if (runesWeapon != null)
+            if (abilityCooldownTimer > 0f)
             {
-                runesWeapon.Evolve(); // Call Evolve method on RunesWeapon script
-                Debug.Log($"PlayerStats: Weapon '{weaponName}' (Runes) has been evolved via EvolveWeapon method.");
-                return; // Exit after handling
+                Debug.Log($"Ability on cooldown! {abilityCooldownTimer:F1} СЃРµРє.");
+                return;
             }
 
-            // Placeholder for Katana evolution
-            // var katanaWeapon = weaponInstance.GetComponent<KatanaWeapon>();
-            // if (katanaWeapon != null)
-            // {
-            //     katanaWeapon.Evolve(); // Assuming KatanaWeapon will have an Evolve() method
-            //     Debug.Log($"PlayerStats: Weapon '{weaponName}' (Katana) has been evolved.");
-            //     return;
-            // }
-
-            // Placeholder for Mace evolution
-            // var maceWeapon = weaponInstance.GetComponent<MaceWeapon>();
-            // if (maceWeapon != null)
-            // {
-            //     maceWeapon.Evolve(); // Assuming MaceWeapon will have an Evolve() method
-            //     Debug.Log($"PlayerStats: Weapon '{weaponName}' (Mace) has been evolved.");
-            //     return;
-            // }
-
-            Debug.LogWarning($"PlayerStats: Weapon '{weaponName}' found, but does not have a recognized evolution script component (e.g., RunesWeapon).");
+            activeAbility.Activate(this);
+            abilityCooldownTimer = finalCooldown;
+            Debug.Log($"Ability used! Next use in {finalCooldown:F1} СЃРµРє.");
         }
         else
         {
-            Debug.LogWarning($"PlayerStats: Attempted to evolve weapon '{weaponName}', but it's not found in the player's active/known weapons dictionary.");
+            Debug.Log("No active ability equipped.");
         }
+    }
+
+    private void SaveProfile()
+    {
+        ExtractToProfile();
+        _ = SaveManager.Instance.SaveAsync();
     }
 }
 
 public enum AttributeType { Strength, Agility, Intelligence }
-[System.Serializable]
+
+[Serializable]
 public class AttributeStat
 {
     public AttributeType type;
@@ -381,8 +564,26 @@ public class AttributeStat
     void LevelUp()
     {
         level++;
-        expToLevel = Mathf.CeilToInt(expToLevel * 1.25f); // Прогрессия
+        expToLevel = Mathf.CeilToInt(expToLevel * 1.25f);
         Debug.Log($"{type} leveled up! New level: {level}");
     }
 }
 
+public static class AbilityDatabase
+{
+    private static Dictionary<string, BaseAbilitySO> abilityDict;
+    public static BaseAbilitySO GetAbilityByName(string name)
+    {
+        if (abilityDict == null)
+        {
+            abilityDict = new Dictionary<string, BaseAbilitySO>();
+            var allAbilities = UnityEngine.Resources.LoadAll<BaseAbilitySO>("Abilities");
+            foreach (var ab in allAbilities)
+                if (!abilityDict.ContainsKey(ab.abilityName))
+                    abilityDict.Add(ab.abilityName, ab);
+        }
+        if (abilityDict.ContainsKey(name))
+            return abilityDict[name];
+        return null;
+    }
+}

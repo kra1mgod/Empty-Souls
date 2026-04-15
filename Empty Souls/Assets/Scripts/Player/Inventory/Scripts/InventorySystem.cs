@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 public class InventorySystem : MonoBehaviour
 {
+    [SerializeField]
+    private FloatingItemDisplay floatingItemDisplayPrefab;
     public static InventorySystem Instance;
     public List<ItemData> items = new List<ItemData>();
 
@@ -51,6 +53,15 @@ public class InventorySystem : MonoBehaviour
         }
 
         InventoryUI.Instance?.AddItem(item);
+        // itemData — описание предмета, playerTransform — Transform игрока
+        var playerTransform = player != null ? player.transform : null;
+        if (floatingItemDisplayPrefab != null && playerTransform != null)
+        {
+            var go = Instantiate(floatingItemDisplayPrefab);
+            go.GetComponent<FloatingItemDisplay>().Setup(item, playerTransform);
+        }
+
+        Debug.Log("Добавили предмет в InventoryUI: " + item.displayName);
     }
 
     public bool HasItem(ItemData item)

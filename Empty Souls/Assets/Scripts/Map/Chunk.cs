@@ -15,8 +15,25 @@ public class Chunk : MonoBehaviour
             for (int y = 0; y < height; y++)
             {
                 int prefabIndex = GetRandomTileIndex(rand);
-                Vector3 pos = new Vector3(transform.position.x + x * tileSize, transform.position.y + y * tileSize, 0);
-                Instantiate(tilePrefabs[prefabIndex], pos, Quaternion.identity, transform);
+                // Важно: Убедиться, что prefabIndex не выходит за пределы массива tilePrefabs
+                if (tilePrefabs != null && tilePrefabs.Length > 0 && prefabIndex < tilePrefabs.Length && tilePrefabs[prefabIndex] != null)
+                {
+                    Vector3 pos = new Vector3(transform.position.x + x * tileSize, transform.position.y + y * tileSize, 0);
+                    Instantiate(tilePrefabs[prefabIndex], pos, Quaternion.identity, transform);
+                }
+                else if (tilePrefabs == null || tilePrefabs.Length == 0)
+                {
+                    // Debug.LogWarning($"[Chunk] tilePrefabs не задан или пуст для чанка {chunkCoord}.");
+                    // Можно пропустить генерацию тайла или вывести более заметное сообщение
+                }
+                else if (prefabIndex >= tilePrefabs.Length)
+                {
+                    // Debug.LogWarning($"[Chunk] prefabIndex ({prefabIndex}) выходит за пределы tilePrefabs ({tilePrefabs.Length}) для чанка {chunkCoord}. Используется последний доступный тайл.");
+                    // prefabIndex = tilePrefabs.Length - 1; // Запасной вариант - использовать последний тайл
+                    // Vector3 pos = new Vector3(transform.position.x + x * tileSize, transform.position.y + y * tileSize, 0);
+                    // Instantiate(tilePrefabs[prefabIndex], pos, Quaternion.identity, transform);
+                    // Лучше убедиться, что tileWeights соответствует количеству tilePrefabs
+                }
             }
         }
     }
@@ -24,12 +41,19 @@ public class Chunk : MonoBehaviour
     {
         float value = (float)rand.NextDouble();
         float sum = 0f;
-        for (int i = 0; i < tileWeights.Length; i++)
+
+        // Если tileWeights не соответствует количеству tilePrefabs, могут быть проблемы.
+        // Идеально, если tileWeights.Length == tilePrefabs.Length
+        // Пока что оставляем как есть, но это потенциальное место для улучшения/проверки
+        int count = Mathf.Min(tileWeights.Length, tilePrefabs != null ? tilePrefabs.Length : 0);
+        if (count == 0) return 0; // Нечего выбирать
+
+        for (int i = 0; i < count; i++)
         {
-            sum += tileWeights[i];
+            sum += tileWeights[i]; // Используем веса только для доступных тайлов
             if (value < sum)
                 return i;
         }
-        return tileWeights.Length - 1; // fallback
+        return count - 1; // fallback
     }
 }

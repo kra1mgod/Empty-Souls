@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026ae869ca889b640962c59a5ff62185, type: 3}
+  m_Name: Level2
+  m_EditorClassIdentifier: 
+  levelName: DarkLevel
+  levelMusic: {fileID: 0}
+  waves:
+  - waveName: da
+    duration: 60
+    enemySpawns:
+    - enemyPrefab: {fileID: 4911073889053158371, guid: 0682950f44c3e3e42869648aed6584aa, type: 3}
+      count: 40
+      delay: 5
+    - enemyPrefab: {fileID: 4911073889053158371, guid: ec51612cb4319eb46bfce31cc5f00738, type: 3}
+      count: 1
+      delay: 20
+  tilePrefabs:
+  - {fileID: 5433734432722675775, guid: 36d5044a6caeea047838565f5d08c21e, type: 3}
+  - {fileID: 5433734432722675775, guid: 4c59963012dd6b34b9b9067a1229f53b, type: 3}
+  - {fileID: 5433734432722675775, guid: 65928eec5215f994e977c89add0686e6, type: 3}
+  - {fileID: 5433734432722675775, guid: f46f2599e84d4094b9ccfe5021f5bef0, type: 3}

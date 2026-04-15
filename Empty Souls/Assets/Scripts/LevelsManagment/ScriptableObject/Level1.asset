@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026ae869ca889b640962c59a5ff62185, type: 3}
+  m_Name: Level1
+  m_EditorClassIdentifier: 
+  levelName: Grass
+  levelMusic: {fileID: 8300000, guid: bd0f5b663e4da8742b4b228468430183, type: 3}
+  waves:
+  - waveName: Bat
+    duration: 60
+    enemySpawns:
+    - enemyPrefab: {fileID: 4911073889053158371, guid: 8fd0478a2bbed514686b88776ab91b30, type: 3}
+      count: 40
+      delay: 2
+    - enemyPrefab: {fileID: 4911073889053158371, guid: ec51612cb4319eb46bfce31cc5f00738, type: 3}
+      count: 1
+      delay: 10
+  tilePrefabs:
+  - {fileID: 3665508629886396701, guid: 7babe88e61fae3c48b4b26ad7b58eeba, type: 3}
+  - {fileID: 3665508629886396701, guid: 53f83171edb82354292cbf970a4acd3e, type: 3}
+  - {fileID: 3665508629886396701, guid: 53f83171edb82354292cbf970a4acd3e, type: 3}

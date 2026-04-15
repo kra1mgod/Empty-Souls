@@ -24,13 +24,16 @@ public class TabMenuUI : MonoBehaviour
 
     void Start()
     {
+        statsPanel.SetActive(false);
+        inventoryPanel.SetActive(false);
+        charPanel.SetActive(false);
         tabMenuPanel.SetActive(false);
 
         statsTabButton.onClick.AddListener(() => ShowTab("stats"));
         inventoryTabButton.onClick.AddListener(() => ShowTab("inv"));
         charTabButton.onClick.AddListener(() => ShowTab("char"));
 
-        ShowTab("stats");
+        // НЕ вызывай ShowTab("stats") здесь!
     }
 
     void Update()
@@ -41,12 +44,20 @@ public class TabMenuUI : MonoBehaviour
             tabMenuPanel.SetActive(isOpen);
             Time.timeScale = isOpen ? 0f : 1f;
 
-            // Автообновление статов при открытии
             if (isOpen)
-                UpdateStatsText();
+            {
+                // Открыли меню — показываем вкладку по умолчанию
+                ShowTab("stats");
+            }
+            else
+            {
+                // Закрыли меню — скрываем все внутренние панели
+                statsPanel.SetActive(false);
+                inventoryPanel.SetActive(false);
+                charPanel.SetActive(false);
+            }
         }
 
-        // Если меню открыто — обновляем статы (по желанию)
         if (isOpen && statsPanel.activeSelf)
             UpdateStatsText();
     }
